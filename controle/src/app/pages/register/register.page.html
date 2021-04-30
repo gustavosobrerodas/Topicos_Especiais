@@ -1,0 +1,36 @@
+<ion-content>
+
+    <topo-login></topo-login>
+      
+    <form [formGroup]="loginForm" (submit)="createUser()">
+
+     <ion-item>
+      <ion-icon name="person" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="nome" type="text" placeholder="Nome" autfocus="true"></ion-input>
+     </ion-item>
+    
+    
+    <ion-item>
+     <ion-icon name="person" color="if" slot="start"></ion-icon>
+     <ion-input formControlName="snome" type="password" placeholder="Sobrenome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="email" type="email" placeholder="E-mail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock-closed" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Semha"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="lock-closed" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="confirm_pass" type="confirm_pass" placeholder="Confirmar"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" color="if" fill="clear">Enviar</ion-button>
+    
+  </form><br><br>
+
+</ion-content>
