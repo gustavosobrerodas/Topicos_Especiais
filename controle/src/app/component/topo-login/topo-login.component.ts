@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-topo-login',
+  selector: 'topo-login',
   templateUrl: './topo-login.component.html',
   styleUrls: ['./topo-login.component.scss'],
 })
