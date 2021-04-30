@@ -2,4 +2,13 @@
 
   <topo-login></topo-login>
 
+  <form [formGroup]="loginForm" (submit)="recoveryPass()">
+    <ion-item>
+      <ion-icon name="mail" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="email" type="email" placeholder="E-mail" autfocus="true"></ion-input>
+    </ion-item><br><br>
+
+    <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" color="if" fill="clear">Enviar</ion-button>
+</form>
+
 </ion-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'fogot',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fogot.page.scss'],
 })
 export class FogotPage implements OnInit {
+  loginForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private builder: FormBuilder,
+    private service: LoginService,
+  ) { }
 
   ngOnInit() {
+    this.loginForm = this.builder.group({
+      email: ['', [Validators.email, Validators.required]],
+    });
+
+  }
+
+  recoveryPass(){
+    
   }
 
 }
