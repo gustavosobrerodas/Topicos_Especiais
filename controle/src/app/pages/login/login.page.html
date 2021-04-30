@@ -6,17 +6,21 @@
       <h1 class="ion-text-center">iFinanças</h1>
     </ion-text>
   </div>
+  
+<form [formGroup]="loginForm" (submit)="login()">
+    <ion-item>
+      <ion-icon name="mail" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="email" type="email" placeholder="E-mail" autfocus="true"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-icon name="mail" color="if" slot="start"></ion-icon>
-    <ion-input [(ngModel)]="email" type="email" placeholder="E-mail" autfocus="true"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-icon name="lock-closed" color="if" slot="start"></ion-icon>
-    <ion-input [(ngModel)]="password" type="password" placeholder="Senha"></ion-input>
-  </ion-item><br><br>
+    <ion-item>
+      <ion-icon name="lock-closed" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" color="if" fill="clear">Enviar</ion-button>
+</form><br><br>
 
-  <ion-button  (click)="validate()" expand="block" color="if" fill="clear">Enviar</ion-button>
+  
 
 </ion-content>

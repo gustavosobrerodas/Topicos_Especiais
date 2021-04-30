@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -7,20 +8,28 @@ import { NavController, ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  password;
-  email;
+  loginForm: FormGroup;
+   
   
 
   constructor(
       private nav: NavController,
+      private builder: FormBuilder,
       private toast: ToastController
   ) { }
 
   ngOnInit() {
+      this.loginForm = this.builder.group({
+        email: ['', [Validators.email, Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(8)]]
+      });
   }
 
-  validate(){
-    if(this.email === 'aluno@ifsp.edu.br' && this.password === '12345678'){
+  login(){
+    const user = this.loginForm.value;
+    console.log(user);
+
+    if(user.email === 'aluno@ifsp.edu.br' && user.password === '12345678'){
       //redireciona o usuario pra home
       this.nav.navigateForward('home');
     }else{
