@@ -28,4 +28,13 @@ export class LoginService {
     });
     ctrl.present   
   }
+
+  createUser(user){
+    
+  }
+
+  recoverPass(email){
+
+  }
+
 }

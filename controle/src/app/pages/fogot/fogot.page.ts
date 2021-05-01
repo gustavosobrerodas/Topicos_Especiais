@@ -13,7 +13,7 @@ export class FogotPage implements OnInit {
   constructor(
     private builder: FormBuilder,
     private service: LoginService,
-  ) { }
+    ) { }
 
   ngOnInit() {
     this.loginForm = this.builder.group({
@@ -23,7 +23,8 @@ export class FogotPage implements OnInit {
   }
 
   recoveryPass(){
-    
+    const email = this.loginForm.value;
+    this.service.recoverPass(email);
   }
 
 }

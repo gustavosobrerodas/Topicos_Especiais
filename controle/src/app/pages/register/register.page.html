@@ -1,6 +1,6 @@
 <ion-content>
 
-    <topo-login></topo-login>
+    <topo-login> title="Cadastrar usuário"</topo-login>
       
     <form [formGroup]="loginForm" (submit)="createUser()">
 
@@ -34,3 +34,12 @@
   </form><br><br>
 
 </ion-content>
+
+<ion-footer>
+  <ion-row>
+     <ion-col>
+       <ion-button [routerLink]="['/login']" fill="clear" color="medium">Voltar</ion-button>
+     </ion-col>
+  </ion-row>
+</ion-footer>
+
