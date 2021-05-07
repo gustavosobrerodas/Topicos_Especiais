@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
 
 createUser() {
   const user = this.loginForm.value;
-  this.service.login(user)
+  this.service.createUser(user)
 }
 
 }

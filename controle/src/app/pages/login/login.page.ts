@@ -16,13 +16,25 @@ export class LoginPage implements OnInit {
   constructor(
       private builder: FormBuilder,
       private service: LoginService,
+      private nav: NavController,
   ) { }
 
   ngOnInit() {
+      this.isUserLoggedIn();
+
       this.loginForm = this.builder.group({
         email: ['', [Validators.email, Validators.required]],
         password: ['', [Validators.required, Validators.minLength(8)]]
       });
+  }
+
+  isUserLoggedIn(){
+      this.service.isLoggedIn.subscribe(user => {
+         if(user) {
+            this.nav.navigateForward('home');
+         }
+      }
+    );
   }
 
    login() {
